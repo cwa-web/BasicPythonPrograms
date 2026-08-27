@@ -2,7 +2,7 @@
 A beginner-friendly collection of 20 essential Python programs complete with:
 - 📖 Simple Hindi/Hinglish explanations
 - 💻 Clean Python source code
-- 🔄 Logic flowcharts (Mermaid & ASCII diagrams)
+- 🔄 Logic flowcharts (Mermaid Diagrams)
 - 🧠 Step-by-step logic breakdown
 - 🎤 Practical viva Q&A
 - 📝 Example inputs & outputs
@@ -102,8 +102,12 @@ python-basic-programs/
 ### 1️⃣ Addition of Two Numbers
 * **📖 Description:** Do numbers ko add karke unka total calculate karna.
 * **🔄 Flow Diagram:**
-  ```text
-  [Start] ──> [/Input A, B/] ──> [Sum = A + B] ──> [/Print Sum/] ──> [End]
+  ```mermaid
+  flowchart TD
+      A([Start]) --> B[/Enter A and B/]
+      B --> C["Sum = A + B"]
+      C --> D[/Print Sum/]
+      D --> E([End])
   ```
 * **💻 Source Code:**
   ```python
@@ -124,8 +128,12 @@ python-basic-programs/
 ### 2️⃣ Subtraction of Two Numbers
 * **📖 Description:** Ek number mein se doosra number minus karna.
 * **🔄 Flow Diagram:**
-  ```text
-  [Start] ──> [/Input A, B/] ──> [Result = A - B] ──> [/Print Result/] ──> [End]
+  ```mermaid
+  flowchart TD
+      A([Start]) --> B[/Enter A and B/]
+      B --> C["Result = A - B"]
+      C --> D[/Print Result/]
+      D --> E([End])
   ```
 * **💻 Source Code:**
   ```python
@@ -140,8 +148,12 @@ python-basic-programs/
 ### 3️⃣ Multiplication of Two Numbers
 * **📖 Description:** Do numbers ka product calculate karna.
 * **🔄 Flow Diagram:**
-  ```text
-  [Start] ──> [/Input A, B/] ──> [Result = A * B] ──> [/Print Result/] ──> [End]
+  ```mermaid
+  flowchart TD
+      A([Start]) --> B[/Enter A and B/]
+      B --> C["Result = A * B"]
+      C --> D[/Print Result/]
+      D --> E([End])
   ```
 * **💻 Source Code:**
   ```python
@@ -159,9 +171,9 @@ python-basic-programs/
   ```mermaid
   flowchart TD
       A([Start]) --> B[/Enter A and B/]
-      B --> C{B == 0?}
+      B --> C{"B == 0 ?"}
       C -- Yes --> D[/Cannot Divide by Zero/]
-      C -- No --> E[Result = A / B]
+      C -- No --> E["Result = A / B"]
       E --> F[/Print Result/]
       D --> G([End])
       F --> G
@@ -184,7 +196,7 @@ python-basic-programs/
   ```mermaid
   flowchart TD
       A([Start]) --> B[/Enter Number/]
-      B --> C{Number % 2 == 0?}
+      B --> C{"Number % 2 == 0 ?"}
       C -- Yes --> D[/Even Number/]
       C -- No --> E[/Odd Number/]
       D --> F([End])
@@ -207,9 +219,9 @@ python-basic-programs/
   ```mermaid
   flowchart TD
       A([Start]) --> B[/Enter Number/]
-      B --> C{Number > 0?}
+      B --> C{"Number > 0 ?"}
       C -- Yes --> D[/Positive/]
-      C -- No --> E{Number < 0?}
+      C -- No --> E{"Number < 0 ?"}
       E -- Yes --> F[/Negative/]
       E -- No --> G[/Zero/]
       D --> H([End])
@@ -234,10 +246,10 @@ python-basic-programs/
 * **🔄 Flow Diagram:**
   ```mermaid
   flowchart TD
-      A([Start]) --> B[/Enter A B C/]
-      B --> C{A >= B and A >= C?}
+      A([Start]) --> B[/Enter A, B, C/]
+      B --> C{"A >= B and A >= C ?"}
       C -- Yes --> D[/A is Largest/]
-      C -- No --> E{B >= A and B >= C?}
+      C -- No --> E{"B >= A and B >= C ?"}
       E -- Yes --> F[/B is Largest/]
       E -- No --> G[/C is Largest/]
       D --> H([End])
@@ -265,10 +277,10 @@ python-basic-programs/
   ```mermaid
   flowchart TD
       A([Start]) --> B[/Enter N/]
-      B --> C{N <= 1?}
+      B --> C{"N <= 1 ?"}
       C -- Yes --> D[/Not Prime/]
-      C -- No --> E[Loop from 2 to N-1]
-      E --> F{N % i == 0?}
+      C -- No --> E["Check Divisibility (2 to N-1)"]
+      E --> F{"Any Divisor Found?"}
       F -- Yes --> G[/Not Prime/]
       F -- No --> H[/Prime/]
       D --> I([End])
@@ -297,8 +309,13 @@ python-basic-programs/
 ### 9️⃣ Factorial
 * **📖 Description:** Kisi number ka factorial ($n! = n \times (n-1) \times \dots \times 1$) find karna.
 * **🔄 Flow Diagram:**
-  ```text
-  [Start] ──> [/Input N/] ──> [Fact = 1] ──> [Loop 1 to N: Fact = Fact * i] ──> [/Print Fact/] ──> [End]
+  ```mermaid
+  flowchart TD
+      A([Start]) --> B[/Enter N/]
+      B --> C["Fact = 1"]
+      C --> D["Loop 1 to N: Fact = Fact * i"]
+      D --> E[/Print Fact/]
+      E --> F([End])
   ```
 * **💻 Source Code:**
   ```python
@@ -317,10 +334,10 @@ python-basic-programs/
   ```mermaid
   flowchart TD
       A([Start]) --> B[/Enter N/]
-      B --> C[Set i = 1]
-      C --> D{i <= 10?}
-      D -- Yes --> E[/Print N * i/]
-      E --> F[i = i + 1]
+      B --> C["Set i = 1"]
+      C --> D{"i <= 10 ?"}
+      D -- Yes --> E[/"Print N * i"/]
+      E --> F["i = i + 1"]
       F --> D
       D -- No --> G([End])
   ```
@@ -339,11 +356,11 @@ python-basic-programs/
   ```mermaid
   flowchart TD
       A([Start]) --> B[/Enter N/]
-      B --> C[Reverse = 0]
-      C --> D{N > 0?}
-      D -- Yes --> E[Digit = N % 10]
-      E --> F[Reverse = Reverse * 10 + Digit]
-      F --> G[N = N // 10]
+      B --> C["Reverse = 0"]
+      C --> D{"N > 0 ?"}
+      D -- Yes --> E["Digit = N % 10"]
+      E --> F["Reverse = Reverse * 10 + Digit"]
+      F --> G["N = N // 10"]
       G --> D
       D -- No --> H[/Print Reverse/]
       H --> I([End])
@@ -367,13 +384,12 @@ python-basic-programs/
   ```mermaid
   flowchart TD
       A([Start]) --> B[/Enter N/]
-      B --> C[Original = N, Reverse = 0]
-      C --> D[Calculate Reverse]
-      D --> E{Original == Reverse?}
-      E -- Yes --> F[/Palindrome/]
-      E -- No --> G[/Not Palindrome/]
-      F --> H([End])
-      G --> H
+      B --> C["Store Original = N, Find Reverse"]
+      C --> D{"Original == Reverse ?"}
+      D -- Yes --> E[/Palindrome/]
+      D -- No --> F[/Not Palindrome/]
+      E --> G([End])
+      F --> G
   ```
 * **💻 Source Code:**
   ```python
@@ -398,11 +414,11 @@ python-basic-programs/
   ```mermaid
   flowchart TD
       A([Start]) --> B[/Enter N/]
-      B --> C[Sum = 0]
-      C --> D{N > 0?}
-      D -- Yes --> E[Digit = N % 10]
-      E --> F[Sum = Sum + Digit]
-      F --> G[N = N // 10]
+      B --> C["Sum = 0"]
+      C --> D{"N > 0 ?"}
+      D -- Yes --> E["Digit = N % 10"]
+      E --> F["Sum = Sum + Digit"]
+      F --> G["N = N // 10"]
       G --> D
       D -- No --> H[/Print Sum/]
       H --> I([End])
@@ -425,12 +441,12 @@ python-basic-programs/
 * **🔄 Flow Diagram:**
   ```mermaid
   flowchart TD
-      A([Start]) --> B[/Enter Terms/]
-      B --> C[Set A = 0, B = 1]
-      C --> D[Print A]
-      D --> E[Next = A + B]
-      E --> F[A = B, B = Next]
-      F --> G{More Terms?}
+      A([Start]) --> B[/Enter Number of Terms/]
+      B --> C["Set A = 0, B = 1"]
+      C --> D[/Print A/]
+      D --> E["Next = A + B"]
+      E --> F["A = B, B = Next"]
+      F --> G{"More Terms?"}
       G -- Yes --> D
       G -- No --> H([End])
   ```
@@ -452,13 +468,15 @@ python-basic-programs/
   ```mermaid
   flowchart TD
       A([Start]) --> B[/Enter N/]
-      B --> C[Count Digits]
-      C --> D[Extract Digit & Add Power]
-      D --> E{Total == Original?}
-      E -- Yes --> F[/Armstrong Number/]
-      E -- No --> G[/Not Armstrong/]
-      F --> H([End])
-      G --> H
+      B --> C["Count Digits = D"]
+      C --> D["Extract Digit & Add Digit^D to Total"]
+      D --> E{"More Digits Left?"}
+      E -- Yes --> D
+      E -- No --> F{"Total == Original ?"}
+      F -- Yes --> G[/Armstrong/]
+      F -- No --> H[/Not Armstrong/]
+      G --> I([End])
+      H --> I
   ```
 * **💻 Source Code:**
   ```python
@@ -481,8 +499,12 @@ python-basic-programs/
 ### 1️⃣6️⃣ Swap Two Numbers
 * **📖 Description:** Do variables ki values ko aapas mein exchange karna.
 * **🔄 Flow Diagram:**
-  ```text
-  [Start] ──> [/Input A, B/] ──> [a, b = b, a] ──> [/Print A, B/] ──> [End]
+  ```mermaid
+  flowchart TD
+      A([Start]) --> B[/Enter A and B/]
+      B --> C["a, b = b, a"]
+      C --> D[/Print A and B/]
+      D --> E([End])
   ```
 * **💻 Source Code:**
   ```python
@@ -502,9 +524,9 @@ python-basic-programs/
   ```mermaid
   flowchart TD
       A([Start]) --> B[/Enter Year/]
-      B --> C{Year % 400 == 0?}
+      B --> C{"Year % 400 == 0 ?"}
       C -- Yes --> D[/Leap Year/]
-      C -- No --> E{Year % 4 == 0 and Year % 100 != 0?}
+      C -- No --> E{"Year % 4 == 0 and Year % 100 != 0 ?"}
       E -- Yes --> D
       E -- No --> F[/Not Leap Year/]
       D --> G([End])
@@ -527,10 +549,10 @@ python-basic-programs/
   ```mermaid
   flowchart TD
       A([Start]) --> B[/Enter N/]
-      B --> C[Count = 0]
-      C --> D{N > 0?}
-      D -- Yes --> E[N = N // 10]
-      E --> F[Count = Count + 1]
+      B --> C["Count = 0"]
+      C --> D{"N > 0 ?"}
+      D -- Yes --> E["N = N // 10"]
+      E --> F["Count = Count + 1"]
       F --> D
       D -- No --> G[/Print Count/]
       G --> H([End])
@@ -552,14 +574,14 @@ python-basic-programs/
 * **🔄 Flow Diagram:**
   ```mermaid
   flowchart TD
-      A([Start]) --> B[Create List]
-      B --> C[Maximum = First Element]
-      C --> D[Take Next Element]
-      D --> E{Element > Maximum?}
-      E -- Yes --> F[Maximum = Element]
-      E -- No --> G[Continue]
+      A([Start]) --> B["Create List"]
+      B --> C["Maximum = First Element"]
+      C --> D["Take Next Element"]
+      D --> E{"Element > Maximum ?"}
+      E -- Yes --> F["Maximum = Element"]
+      E -- No --> G["Continue"]
       F --> G
-      G --> H{More Elements?}
+      G --> H{"More Elements?"}
       H -- Yes --> D
       H -- No --> I[/Print Maximum/]
       I --> J([End])
@@ -573,7 +595,7 @@ python-basic-programs/
           maximum = num
   print("Maximum =", maximum)
   ```
-* **🧠 Explanation:** Pehle element ko benchmark (`maximum`) assign karte hain, phir poor list iterate karke compare aur update karte hain.
+* **🧠 Explanation:** Pehle element ko benchmark (`maximum`) assign karte hain, phir poori list iterate karke compare aur update karte hain.
 * **🎤 Viva Point:** Built-in function `max(numbers)` bhi same task perform karta hai.
 ---
 ### 2️⃣0️⃣ Count Vowels in a String
@@ -582,13 +604,13 @@ python-basic-programs/
   ```mermaid
   flowchart TD
       A([Start]) --> B[/Enter String/]
-      B --> C[Count = 0]
-      C --> D[Take Character]
-      D --> E{Character in 'aeiou'?}
-      E -- Yes --> F[Count = Count + 1]
-      E -- No --> G[Continue]
+      B --> C["Count = 0"]
+      C --> D["Take Character"]
+      D --> E{"Is Character a Vowel?"}
+      E -- Yes --> F["Count = Count + 1"]
+      E -- No --> G["Continue"]
       F --> G
-      G --> H{More Characters?}
+      G --> H{"More Characters?"}
       H -- Yes --> D
       H -- No --> I[/Print Count/]
       I --> J([End])
@@ -603,17 +625,4 @@ python-basic-programs/
   print("Number of vowels =", count)
   ```
 * **🧠 Explanation:** `.lower()` case sensitivity handle karta hai aur `in` operator vowel set membership verify karta hai.
-* **🎤 Viva Point:** `in` Python ka membership operator hai jo check karta hai ki element sequence mein present hai ya nahi.
----
-## 🧮 Important Python Operators Cheat Sheet
-### Arithmetic Operators
-
-| Operator | Meaning | Example | Result |
-| :--- | :--- | :--- | :--- |
-| `+` | Addition | `5 + 2` | `7` |
-| `-` | Subtraction | `5 - 2` | `3` |
-| `*` | Multiplication | `5 * 2` | `10` |
-| `/` | Division (Float) | `5 / 2` | `2.5` |
-| `%` | Modulus (Remainder) | `5 % 2` | `1` |
-| `//` | Floor Division (Integer) | `5 // 2` | `2` |
-| `**` | Exponentiation (Power) | `5 ** 2` | `25`
+* **🎤 Viva Point:** `in` Python ka membership operator hai jo check karta hai k
